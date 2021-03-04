@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
     s.homepage              = "https://native.electrode.io"
     s.license               = "MIT"
     s.author                = "Electrode Native Platform"
-    s.source                = { :git => "{{{url}}}"}
+    s.source                = { :git => "{{{url}}}", :tag => "v{{{containerVersion}}}" }
     s.vendored_frameworks   = "ElectrodeContainer.xcframework"
     s.platform              = :ios
     s.swift_version         = "5.0"
