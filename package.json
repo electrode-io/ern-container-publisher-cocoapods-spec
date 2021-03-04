@@ -1,6 +1,6 @@
 {
   "name": "ern-container-publisher-cocoapod-spec",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Electrode Native CocoaPod Spec Container Publisher",
   "main": "./dist/index.js",
   "files": [
