@@ -3,9 +3,9 @@ import { createTmpDir, gitCli, shell, log, NativePlatform, mustacheUtils } from 
 import path from 'path'
 import fs from 'fs'
 
-export default class CocoaPodSpecPublisher implements ContainerPublisher {
+export default class CocoaPodsSpecPublisher implements ContainerPublisher {
   get name(): string {
-    return 'cocoapod-spec'
+    return 'cocoapods-spec'
   }
 
   get platforms(): NativePlatform[] {

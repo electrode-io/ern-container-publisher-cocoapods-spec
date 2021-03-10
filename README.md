@@ -1,10 +1,10 @@
-# Electrode Native CocoaPod Spec Container Publisher
+# Electrode Native CocoaPods Spec Container Publisher
 
 [![ci][1]][2]
 
-This publisher can be used to publish the [CocoaPod](3) spec of an iOS container to a remote Git pod spec repository. The Git repository provider should not matter (GitHub, BitBucket, TFS ...).
+This publisher can be used to publish the [CocoaPods][3] spec of an iOS container to a remote Git pod spec repository. The Git repository provider should not matter (GitHub, BitBucket, TFS ...).
 
-**This publisher expect that the container is distributed as a precompiled XCFramework**
+**This publisher expects that the container is distributed as a precompiled XCFramework**
 
 In future updates of this publisher we may support other distribution formats based on new needs.
 
@@ -17,7 +17,7 @@ The target Git remote repository must exist. It will not be created by this publ
 #### Required
 
 - `--url/-u` : URL of the remote Git repository (SSH or HTTPS) to publish to
-- `--publisher/-p` : `cocoapod-spec`
+- `--publisher/-p` : `cocoapods-spec`
 - `--platform` : `ios`
 - `sourceRepoUrl` should be set in the `extra` object payload (via `-e` option). It should point to the Git repository url where the container xcframework is stored.
 
@@ -32,23 +32,23 @@ Default to `1.0.0`
 - `branch` : The name of the branch to publish to.\
 Default to `main`
 
-The `ern publish-container` CLI command can be used as follow to manually publish a Container using the cocoapod git publisher :
+The `ern publish-container` CLI command can be used as follow to manually publish a Container using the cocoapods git publisher :
 
 ```sh
-ern publish-container --containerPath [pathToContainer] -p cocoapod-spec -u [gitRepoUrl] -v [containerVersion] ---platform [android|ios] -e '{"branch":"[branch_name]"}'
+ern publish-container --containerPath [pathToContainer] -p cocoapods-spec -u [gitRepoUrl] -v [containerVersion] ---platform [android|ios] -e '{"branch":"[branch_name]"}'
 ```
 
 - `allowVersionOverwrite` : A boolean flag to allow overwriting the version (tag). Defaults to false.
 
 ```sh
-ern publish-container --containerPath [pathToContainer] -p cocoapod-spec -u [gitRepoUrl] -v [containerVersion] ---platform [android|ios] -e '{"allowVersionOverwrite": true}'
+ern publish-container --containerPath [pathToContainer] -p cocoapods-spec -u [gitRepoUrl] -v [containerVersion] ---platform [android|ios] -e '{"allowVersionOverwrite": true}'
 ```
 
 ### With Cauldron
 
 #### Required
 
-- `--publisher/-p` : `cocoapod-spec`
+- `--publisher/-p` : `cocoapods-spec`
 - `--url/-u` : URL of the remote Git repository (SSH or HTTPS) to publish to
 - `sourceRepoUrl` should be set in the `extra` object payload. It should point to the Git repository url where the container xcframework is stored.
 
@@ -63,14 +63,14 @@ Defaults to false.
 To automatically publish Cauldron generated Containers of a target native application and platform, the `ern cauldron add publisher` command can be used as follow:
 
 ```sh
-ern cauldron add publisher -p cocoapod-spec -u [gitRepoUrl] -e '{"branch":"[branch_name]"}'
+ern cauldron add publisher -p cocoapods-spec -u [gitRepoUrl] -e '{"branch":"[branch_name]"}'
 ```
 
 This will result in the following publisher entry in Cauldron :
 
 ```json
 {
-  "name": "cocoapod-spec",
+  "name": "cocoapods-spec",
   "url": "[gitRepoUrl]",
   "extra": {
     "branch": "[branch_name]",
@@ -85,8 +85,8 @@ This is only needed once. Once the configuration for the publisher is stored in 
 ### Programmatically
 
 ```js
-import GitPublisher from 'ern-container-publisher-cocoapod-spec'
-const publisher = new CocoaPodGitPublisher()
+import GitPublisher from 'ern-container-publisher-cocoapods-spec'
+const publisher = new CocoaPodsGitPublisher()
 publisher.publish({
   /* Local file system path to the Container */
   containerPath,
@@ -106,7 +106,6 @@ publisher.publish({
 })
 ```
 
-[1]: https://github.com/electrode-io/ern-container-publisher-cocoapod-spec/workflows/ci/badge.svg
-[2]: https://github.com/electrode-io/ern-container-publisher-cocoapod-spec/actions
+[1]: https://github.com/electrode-io/ern-container-publisher-cocoapods-spec/workflows/ci/badge.svg
+[2]: https://github.com/electrode-io/ern-container-publisher-cocoapods-spec/actions
 [3]: https://cocoapods.org
-[4]: https://github.com/electrode-io/ern-container-transformer-xcframework

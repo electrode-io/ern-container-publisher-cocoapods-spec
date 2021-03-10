@@ -1,7 +1,7 @@
 {
-  "name": "ern-container-publisher-cocoapod-spec",
+  "name": "ern-container-publisher-cocoapods-spec",
   "version": "1.0.1",
-  "description": "Electrode Native CocoaPod Spec Container Publisher",
+  "description": "Electrode Native CocoaPods Spec Container Publisher",
   "main": "./dist/index.js",
   "files": [
     "dist/",
@@ -10,10 +10,10 @@
   "homepage": "http://www.electrode.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/electrode-io/ern-container-publisher-cocoapod-git.git"
+    "url": "https://github.com/electrode-io/ern-container-publisher-cocoapods-spec.git"
   },
   "bugs": {
-    "url": "https://github.com/electrode-io/ern-container-publisher-cocoapod-git/issues"
+    "url": "https://github.com/electrode-io/ern-container-publisher-cocoapods-spec/issues"
   },
   "keywords": [
     "electrode",
